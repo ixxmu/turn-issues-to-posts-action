@@ -54,7 +54,8 @@ runs:
         layout: post
         title: "${{ inputs.title }}"
         date: ${{ inputs.created_at }}
-        update: ${{inputs.updated_at}}
+        update: ${{ inputs.updated_at }}
+        tags: 
         ---
         ${{ inputs.body }}
         EOF
