@@ -24,6 +24,9 @@ inputs:
   created_at:
     description: "github.event.issue.created_at"
     required: true
+  updated_at:
+    description: "github.event.issue.updated_at"
+    required: true
   title:
     description: "github.event.issue.title"
     required: true
@@ -45,11 +48,13 @@ runs:
         # useing '' to wrap the title to escapse backticks
         # and quates to wrap title in post body is to escapse backticks in jekyll building
         POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ inputs.title }}')
+        #cat <<'EOF' > _posts/"${DATE:0:10}-${POST_TITLE}".md
         cat <<'EOF' > _posts/"${DATE:0:10}-${POST_TITLE}".md
         ---
         layout: post
         title: "${{ inputs.title }}"
         date: ${{ inputs.created_at }}
+        update: ${{inputs.updated_at}}
         ---
         ${{ inputs.body }}
         EOF
