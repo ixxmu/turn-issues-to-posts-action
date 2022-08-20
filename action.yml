@@ -17,7 +17,7 @@ inputs:
   dir:
     description: "the posts dir"
     required: true
-    default: "_posts"
+    default: "docs"
   GITHUB_TOKEN:
     description: "secrets.GITHUB_TOKEN"
     required: true
@@ -35,6 +35,9 @@ inputs:
     required: true
   body:
     description: "github.event.issue.body"
+    required: true
+  comment:
+    description: "github.event.comment.body"
     required: true
   number:
     description: "github.event.issue.bumber"
@@ -67,6 +70,7 @@ runs:
         Edit @ | [here](https://github.com/${{ github.repository }}/issues/${{ inputs.number }})
         
         ---
+        ${{ inputs.comment }}
         ${{ inputs.body }}
         EOF
         else
