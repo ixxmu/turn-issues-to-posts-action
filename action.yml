@@ -64,8 +64,10 @@ runs:
         date: ${{ inputs.created_at }}
         tags: ${{ inputs.label_name }}
         ---
-        ${{ inputs.comment }}
-        ${{ inputs.body }}
+        ${{ inputs.body }}  
+        
+        ${{ inputs.comment }}  
+        
         EOF
     - name: Push changes to repo
       shell: bash
