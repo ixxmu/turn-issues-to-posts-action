@@ -29,7 +29,7 @@ inputs:
     required: true
   label_name:
     description: "github.event.issue.label[name]"
-    # description: "${{toJson(github.event.issue.labels.*.name)}}"
+    # description: "toJson(github.event.issue.labels.*.name)"
     required: true
   title:
     description: "github.event.issue.title"
@@ -62,6 +62,7 @@ runs:
         ---
         title: "${{ inputs.title }}"
         date: ${{ inputs.created_at }}
+        draft: ["false"]
         tags: ${{ inputs.label_name }}
         ---
         ${{ inputs.body }}  
