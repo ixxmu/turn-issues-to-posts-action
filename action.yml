@@ -64,6 +64,7 @@ runs:
         date: ${{ inputs.created_at }}
         draft: ["false"]
         tags: ${{ inputs.label_name }}
+        categories: ["Duty"]
         ---
         ${{ inputs.body }}  
         <hr>
