@@ -65,9 +65,8 @@ runs:
         tags: ${{ inputs.label_name }}
         ---
         ${{ inputs.body }}  
-        
-        ${{ inputs.comment }}  
-        
+        - - - - - -
+        [原文链接](${{ inputs.comment }})
         EOF
     - name: Push changes to repo
       shell: bash
