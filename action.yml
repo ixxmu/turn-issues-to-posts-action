@@ -46,9 +46,6 @@ inputs:
   actor:
     description: "github.actor"
     required: true
-  categories:
-    description: "article types"
-    required: true
 runs:
   using: "composite"
   steps:
@@ -67,7 +64,7 @@ runs:
         date: ${{ inputs.created_at }}
         draft: ["false"]
         tags: ${{ inputs.label_name }}
-        categories: ${{ inputs.categories }}
+        categories: ["Duty"]
         ---
         ${{ inputs.body }}  
         <hr>
