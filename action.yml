@@ -62,7 +62,7 @@ runs:
         ---
         title: "${{ inputs.title }}"
         date: ${{ inputs.created_at }}
-        categories: [ "duty" ]
+        categories: " [ "duty" ] " 
         tags: ${{ inputs.label_name }}
         ---
         ${{ inputs.body }}  
