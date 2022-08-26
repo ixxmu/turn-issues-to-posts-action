@@ -29,7 +29,7 @@ inputs:
     required: true
   label_name:
     # description: "github.event.issue.label[name]"
-    description: "github.event.label"
+    description: "github.event.labels.name"
     required: true
   title:
     description: "github.event.issue.title"
