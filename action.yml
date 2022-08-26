@@ -66,11 +66,7 @@ runs:
         ---
         ${{ inputs.body }}  
         <hr>
-        [原文链接]( ${{inputs.comment}} )
-        
-        [Google][1]
-        [1]: http://www.google.com/
-        <a href="http://www.google.com/">链接文本</a>
+        <a href="${{inputs.comment}}",target="_blank" rel="noopener noreferrer">原文链接</a>
         EOF
     - name: Push changes to repo
       shell: bash
