@@ -66,8 +66,11 @@ runs:
         ---
         ${{ inputs.body }}  
         <hr>
-        [原文链接](${{ inputs.comment}})
-        <hr>
+        [原文链接]( ${{inputs.comment}} )
+        
+        [Google][1]
+        [1]: http://www.google.com/
+
         EOF
     - name: Push changes to repo
       shell: bash
