@@ -67,7 +67,7 @@ runs:
         date: ${{ inputs.created_at }}
         draft: ["false"]
         tags: ${{ inputs.label_name }}
-        categories:  ${{ inputs.categories }}
+        categories: ${{ inputs.categories }}
         ---
         ${{ inputs.body }}  
         <hr>
