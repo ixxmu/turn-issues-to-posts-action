@@ -28,8 +28,8 @@ inputs:
     description: "github.event.issue.updated_at"
     required: true
   label_name:
-    description: "github.event.issue.label[name]"
-    # description: "github.event.issue.labels"
+    # description: "github.event.issue.label[name]"
+    description: "github.event.label"
     required: true
   title:
     description: "github.event.issue.title"
