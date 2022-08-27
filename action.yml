@@ -17,7 +17,7 @@ inputs:
   dir:
     description: "the posts dir"
     required: true
-    default: "docs"
+    default: "posts"
   GITHUB_TOKEN:
     description: "secrets.GITHUB_TOKEN"
     required: true
