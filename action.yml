@@ -46,6 +46,9 @@ inputs:
   actor:
     description: "github.actor"
     required: true
+outputs:
+  md_title:
+    description: 'The id of the matching comment found.'
 runs:
   using: "composite"
   steps:
@@ -70,6 +73,9 @@ runs:
         <hr>
         <a href="${{inputs.comment}}",target="_blank" rel="noopener noreferrer">原文链接</a>
         EOF
+
+        echo "md_title="${{ inputs.dir }}"/"${POST_TITLE}".md" >> $GITHUB_ENV
+        
     - name: Push changes to repo
       shell: bash
       run: |
