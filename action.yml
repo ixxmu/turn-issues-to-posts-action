@@ -40,6 +40,9 @@ inputs:
   comment:
     description: "github.event.comment.body"
     required: true
+  categories:
+    description: "categories from different repos"
+    required: true
   number:
     description: "github.event.issue.bumber"
     required: true
@@ -64,7 +67,7 @@ runs:
         date: ${{ inputs.created_at }}
         draft: ["false"]
         tags: ${{ inputs.label_name }}
-        categories: ["Duty"]
+        categories: ${{ inputs.categories }}
         ---
         ${{ inputs.body }}  
         <hr>
