@@ -84,5 +84,5 @@ runs:
         git checkout ${{ inputs.branch }}
         git add .
         git status
-        git commit -${{ inputs.title }}"
+        git commit -a m "${{ inputs.title }}"
         git push ${REMOTE} ${{ inputs.branch }}
